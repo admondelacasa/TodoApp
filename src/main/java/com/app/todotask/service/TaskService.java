@@ -26,4 +26,15 @@ public class TaskService {
         task.setCreatedAt(LocalDateTime.now());
         taskRepository.save(task);
     }
+
+    public void deleteTask(Long id) {
+        taskRepository.deleteById(id);
+    }
+
+    public void toggleTask(Long id) {
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Task"));
+        task.setCompleted(!task.isCompleted());
+        taskRepository.save(task);
+    }
 }
