@@ -6,9 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 
 @Entity
@@ -20,5 +19,5 @@ public class Task {
     private Long id;
     private String title;
     private boolean completed;
-    private LocalDateTime createdAt;
+    private Instant createdAt;
 }

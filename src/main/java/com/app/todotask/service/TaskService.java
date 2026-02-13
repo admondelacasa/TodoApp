@@ -5,7 +5,7 @@ import com.app.todotask.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.List;
 
 @Service
@@ -23,7 +23,7 @@ public class TaskService {
         Task task = new Task();
         task.setTitle(title);
         task.setCompleted(false);
-        task.setCreatedAt(LocalDateTime.now());
+        task.setCreatedAt(Instant.now());
         taskRepository.save(task);
     }
 
